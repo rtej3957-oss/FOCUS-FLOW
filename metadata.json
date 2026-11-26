@@ -1,0 +1,6 @@
+{
+  "name": "Focus Flow",
+  "description": "A refined personal task management, habit tracking, focus timer, and AI productivity workspace.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Flow — Personal Task &amp; Productivity Workspace</title>
+    <meta name="description" content="A refined personal task management, habit tracking, focus timer, and AI productivity workspace." />
+    <meta property="og:title" content="Focus Flow — Personal Task &amp; Productivity Workspace" />
+    <meta property="og:description" content="A refined personal task management, habit tracking, focus timer, and AI productivity workspace." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem('focusflow_data_v1');
+          var theme = 'system';
+          if (raw) {
+            var parsed = JSON.parse(raw);
+            if (parsed && parsed.preferences && parsed.preferences.theme) {
+              theme = parsed.preferences.theme;
+            }
+          }
+          var isDark =
+            theme === 'dark' ||
+            (theme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-white text-zinc-900 dark:bg-[#111216] dark:text-zinc-100 antialiased selection:bg-[var(--accent-soft)] selection:text-[var(--accent)]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
